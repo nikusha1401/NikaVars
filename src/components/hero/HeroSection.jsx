@@ -38,11 +38,11 @@ const HeroSection = ({ withBg, loading }) => {
             className="relative z-20 flex flex-col items-center justify-center h-full text-white text-center px-4 max-w-80%"
           >
             
-            <div className="flex flex-col font-bold">
+            <div className="flex flex-col font-bold gap-1">
               <span className="text-xl xs:text-2xl sm:text-3xl ">
                 Hi, I'm
               </span>
-              <span className="text-xl xs:text-2xl sm:text-3xl">
+              <span className="text-xl xs:text-3xl sm:text-3xl">
                 Nika Varsimashvili
               </span>
               <span className="text-2xl xs:text-4xl sm:text-7xl">
@@ -61,7 +61,7 @@ const HeroSection = ({ withBg, loading }) => {
 
             <ScrollButton
               text={"About Me"}
-              buttonClass="mt-6 px-6 py-3 font-bold bg-white text-black rounded-full  hover:bg-[#18ff61] transition cursor-pointer"
+              buttonClass="mt-6 px-6 py-2 font-bold bg-white text-black rounded-full  hover:bg-[#18ff61] transition cursor-pointer"
               idSelector={"#aboutme"}
             />
           </div>

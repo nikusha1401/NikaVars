@@ -58,7 +58,7 @@ export default function AnimatedText({
           <span
             className={
               textClass ||
-              "whitespace-nowrap xs:text-6xl md:text-6xl font-black"
+              "whitespace-nowrap text-5xl sm:text-6xl font-black"
             }
           >
             {text}

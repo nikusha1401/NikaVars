@@ -16,7 +16,7 @@ export const projectsList = [
     {
       name: "A-Store Ecommerce",
       text: "es iqneba a-store-is textsi da aba vnaxot ra da rogor Sheicvleba sxva rameebic",
-      img: "/assets/astore.jpg",
+      img: "/assets/astore.JPG",
       roles: ["UI/UX Designer", "Creator"],
     },
   ];

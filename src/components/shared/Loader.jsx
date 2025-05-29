@@ -28,8 +28,7 @@ function Loader({ startRender }) {
     });
   });
 
-  useEffect(() => {
-    // const chars = textRef.current?.querySelectorAll(".char");
+  useGSAP(() => {
     const tl = gsap.timeline();
 
     tl.to(progressCont.current, {

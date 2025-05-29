@@ -13,9 +13,9 @@ export default function ResumeSection() {
   
   return (
     <Section id={"resume"} sectionClass={"min-h-screen"}>
-      <div className="flex flex-col pt-25 sm:pt-35 pb-10 px-3 md:px-10 xl:px-30 min-h-full">
+      <div className="flex flex-col pt-25 sm:pt-30 pb-10 px-2 md:px-10 xl:px-30 min-h-full">
         <AnimatedText text={"Resume"} trigger={"#resume"}/>
-        <div className="p-5 sm:p-20">
+        <div className="p-3 sm:p-20">
           <AnimatedText
             text={"The technologies I use for building client-side applications"}
             withLine={false}

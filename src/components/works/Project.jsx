@@ -29,10 +29,9 @@ export default function Project({ project, handleNext, handlePrev }) {
 
     touchEndX.current = x;
 
-    const angle = Math.abs(deltaY / deltaX); // tan(theta)
+    const angle = Math.abs(deltaY / deltaX); 
 
-    // თუ კუთხე ძალიან ბრტყელია (მეტად ჰორიზონტალური), დაბლოკე scroll
-    if (angle < 0.5) {
+    if (angle < 0.4) {
       e.preventDefault(); // ეს წყვეტს ვერტიკალურ scroll-ს
     }
   };
@@ -93,7 +92,7 @@ export default function Project({ project, handleNext, handlePrev }) {
         )
         .to(imgRef.current, { opacity: 1, x: 0, duration: 1 }, "<0.1")
         .from(roleContRef.current, { opacity: 0, x: 100, duration: 1 }, "<")
-        .from(".logos", { opacity: 0, duration: 1 }, "<0.2")
+        .from(".logos", { opacity: 0, duration: 0.8 }, "<0.2")
         .from(btnRef.current, { opacity: 0, y: 50, duration: 0.6 }, "<")
         .from(navRef.current, { opacity: 0, y: 50, duration: 0.8 }, "<");
 
@@ -124,7 +123,7 @@ export default function Project({ project, handleNext, handlePrev }) {
         ref={roleContRef}
       >
         <span className="text-xl md:text-3xl py-1 md:py-2">My Role:</span>
-        <span className="text-3xl md:text-5xl font-black" ref={roleRef}></span>
+        <span className="text-2xl md:text-4xl font-black" ref={roleRef}></span>
       </div>
 
       <div className="flex flex-col md:flex-row gap-2 md:gap-15 xl:gap-20">

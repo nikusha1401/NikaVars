@@ -94,7 +94,7 @@ function StoryBook() {
         <div ref={nodeRef} className="flex-1/3 overflow-hidden" id="story-book">
           <div className="p-5 w-full sm:border-1 relative rounded-sm flex flex-col gap-3 sm:items-center justify-evenly h-[80vh] sm:overflow-x-hidden">
             <div className="flex flex-col gap-2 w-fit">
-              <AnimatedText text="ABOUT ME" trigger="#story-book" />
+              <AnimatedText text="ABOUT ME" trigger="#story-book" textClass={"whitespace-nowrap text-5xl sm:text-6xl font-black"} />
               <div
                 id="buttons-cont"
                 className="flex flex-row gap-3 sm:justify-center sm:mt-3 p-1 text-2xl"

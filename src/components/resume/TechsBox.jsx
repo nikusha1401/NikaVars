@@ -39,7 +39,7 @@ export default function TechsBox({ title, titleClass, techs, withLine = true, lo
           trigger: boxRef.current,
           animation: tl,
           start: "top 80%",
-          toggleActions: "play pause play pause",
+          once: true,
         });
       });
 
@@ -51,7 +51,7 @@ export default function TechsBox({ title, titleClass, techs, withLine = true, lo
   return (
     <div className="flex flex-col gap-5 sm:gap-10 py-2 sm:py-5" ref={boxRef}>
       {title && (
-        <h1 className={titleClass || "text-2xl font-bold text-center"} ref={titleRef}>
+        <h1 className={titleClass || "text-xl font-bold text-center"} ref={titleRef}>
           {title}
         </h1>
       )}

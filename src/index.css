@@ -122,10 +122,10 @@ body {
 
 
 @media (max-width: 768px) {
-  body {
+  body, .loader, .overlay-texture {
 
     background-image: none;
-      background-color: black;
+    background-color: black;
 
   }
 }
