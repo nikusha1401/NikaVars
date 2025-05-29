@@ -1,0 +1,58 @@
+import React, { useEffect, useState, useLayoutEffect } from "react";
+import Header from "./Header";
+import { Outlet } from "react-router";
+import Loader from "../shared/Loader";
+import { IntoLoadingContext } from "../../contexts/IntroLoadingContext";
+import { ActiveSectionProvider } from "../../contexts/ActiveSectionContext";
+import Assistent from "../assistent/Assistent";
+import { ActiveStoryProvider } from "../../contexts/ActiveStoryContext";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { ScrollSmootherContext } from "../../contexts/ScrollSmootherContext";
+import Footer from "./Footer";
+
+
+// ...
+export default function Layout() {
+  const [render, setRender] = useState(false)
+  const [loading, setLoading] = useState(true);
+  const smootherRef = React.useRef(null);
+
+  useEffect(() => {
+    smootherRef.current = ScrollSmoother.create({
+      smooth: 1,
+      smoothTouch: 0.8,
+      wrapper: "#smooth-wrapper",
+      content: "#smooth-content",
+    });
+    return () => {
+      smootherRef.current?.kill();
+    };
+  }, []);
+
+  return (
+    <ScrollSmootherContext.Provider value={smootherRef.current}>
+      <IntoLoadingContext.Provider value={{ loading, setLoading }}>
+        <ActiveSectionProvider>
+          <ActiveStoryProvider>
+            <Loader onComplete={() => setRender(true)} />
+            {!loading && <Header />}
+            {!loading && <Assistent />}
+           
+           
+            <main>
+              <div id="smooth-wrapper">
+                <div
+                  id="smooth-content"
+                >
+  
+                  {render && <Outlet /> }
+                  <Footer />
+                </div>
+              </div>
+            </main>
+          </ActiveStoryProvider>
+        </ActiveSectionProvider>
+      </IntoLoadingContext.Provider>
+    </ScrollSmootherContext.Provider>
+  );
+}
