@@ -98,7 +98,7 @@ export default function Assistant() {
             onClick={onClick}
           >
             <img
-              src="/src/assets/about.webp"
+              src="/assets/about.webp"
               alt="assistant image"
               width={isSmallScreen ? "60px" : "80px"}
             />
@@ -107,7 +107,7 @@ export default function Assistant() {
             ref={talkRef}
             className="hidden absolute top-10 left-0 scale-0 opacity-0 pt-[25px] pr-[28px] pb-[112px] pl-[20px] z-30 transition pointer-events-auto"
             style={{
-              backgroundImage: "url('/src/assets/talk.png')",
+              backgroundImage: "url('/assets/talk.png')",
               backgroundRepeat: "no-repeat",
               backgroundSize: "contain",
             }}
