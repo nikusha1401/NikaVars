@@ -119,11 +119,11 @@ export default function Project({ project, handleNext, handlePrev }) {
       onTouchEnd={handleTouchEnd}
     >
       <div
-        className="font-bold w-full text-center  py-2 flex justify-start gap-2"
+        className="font-bold text-2xl md:text-4xl w-full text-center  py-2 flex justify-start gap-2"
         ref={roleContRef}
       >
-        <span className="text-xl md:text-3xl py-1 md:py-2">My Role:</span>
-        <span className="text-2xl md:text-4xl font-black" ref={roleRef}></span>
+        <span>My Role:</span>
+        <span className="font-black" ref={roleRef}></span>
       </div>
 
       <div className="flex flex-col md:flex-row gap-2 md:gap-15 xl:gap-20">
