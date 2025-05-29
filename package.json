@@ -22,7 +22,8 @@
     "react-router": "^7.5.2",
     "react-transition-group": "^4.4.5",
     "swiper": "^11.2.6",
-    "three": "^0.176.0"
+    "three": "^0.176.0",
+    "typed.js": "^2.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
