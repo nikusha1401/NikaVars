@@ -36,7 +36,7 @@ const Tech = React.memo(function Tech({ tech, width, onClick, target = "_blank" 
     <Wrapper {...wrapperProps}>
       <img
         className="w-full h-full"
-        src={`/src/assets/logos/${name}.svg`}
+        src={`/assets/logos/${name}.svg`}
         alt={name}
         title={name}
         loading="lazy"

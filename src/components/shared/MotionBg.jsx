@@ -33,7 +33,7 @@ export default function MotionBg() {
         ref={bgRef}
         className="absolute top-0 left-0 w-full h-full"
         style={{
-          backgroundImage: `url("/src/assets/hero-bg.webp")`,
+          backgroundImage: `url("/assets/hero-bg.webp")`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",

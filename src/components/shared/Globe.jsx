@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useTexture } from "@react-three/drei";
 
 function Earth({ globeRef }) {
-  const texture = useTexture("src/assets/earth.jpg");
+  const texture = useTexture("/assets/earth.jpg");
 
   return (
     <mesh ref={globeRef}>

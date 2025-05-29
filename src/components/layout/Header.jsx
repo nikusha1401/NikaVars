@@ -24,14 +24,10 @@ export default function Header() {
       <div
         id={"header-overlay"}
         className="w-full absolute top-0 left-0 h-full opacity-0 bg-black"
-        // style={{
-        //   backgroundImage: "url('/src/assets/star-textured.webp')",
-        //   backgroundSize: "cover",
-        // }}
       ></div>
       <div id="logo" className="scale-80 sm:scale-100 pointer-events-auto">
         <img
-          src="/src/assets/logo-white.svg"
+          src="/assets/logo-white.svg"
           alt=""
           width={90}
           className="z-200"

@@ -138,18 +138,7 @@ export default function Project({ project, handleNext, handlePrev }) {
               {project.text}
             </p>
           </div>
-          {/* <div className="flex flex-row gap-10">
-            {project.techs?.map((tech, index) => (
-              <img
-                key={index}
-                className="logos"
-                src={`/src/assets/logos/${tech}.svg`}
-                alt={tech}
-                title={tech}
-                width={25}
-              />
-            ))}
-          </div> */}
+
           <div className="logos">
             <TechsBox techs={project.techs} logoSize={25} withLine={false} />
           </div>
