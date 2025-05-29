@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import MotionBg from "../shared/MotionBg";
@@ -38,20 +38,20 @@ const HeroSection = ({ withBg, loading }) => {
             className="relative z-20 flex flex-col items-center justify-center h-full text-white text-center px-4 max-w-80%"
           >
             
-            <div className="flex flex-col">
-              <span className="text-xl xs:text-2xl sm:text-3xl font-bold">
+            <div className="flex flex-col font-bold">
+              <span className="text-xl xs:text-2xl sm:text-3xl ">
                 Hi, I'm
               </span>
-              <span className="text-xl xs:text-2xl sm:text-3xl font-bold">
+              <span className="text-xl xs:text-2xl sm:text-3xl">
                 Nika Varsimashvili
               </span>
-              <span className="text-2xl xs:text-4xl sm:text-7xl font-bold">
+              <span className="text-2xl xs:text-4xl sm:text-7xl">
                 Full-Stack Developer
               </span>
-              <span className="text-2xl xs:text-4xl sm:text-7xl font-bold">
+              <span className="text-2xl xs:text-4xl sm:text-7xl">
                 &
               </span>
-              <span className="text-2xl xs:text-4xl sm:text-7xl font-bold">
+              <span className="text-2xl xs:text-4xl sm:text-7xl">
                 UI/UX designer
               </span>
             </div>

@@ -1,6 +1,3 @@
-import { useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import Section from "../shared/Section";
 import TechsBox from "./TechsBox";
 import {
@@ -13,21 +10,16 @@ import AnimatedText from "../shared/AnimatedText";
 
 
 export default function ResumeSection() {
+  
   return (
     <Section id={"resume"} sectionClass={"min-h-screen"}>
       <div className="flex flex-col pt-25 sm:pt-35 pb-10 px-3 md:px-10 xl:px-30 min-h-full">
         <AnimatedText text={"Resume"} trigger={"#resume"}/>
         <div className="p-5 sm:p-20">
-          {/* <h1
-            ref={headingRef}
-            className="text-2xl sm:text-4xl font-bold text-center mb-10"
-          >
-            The technologies I use for building client-side applications
-          </h1> */}
-
           <AnimatedText
             text={"The technologies I use for building client-side applications"}
             withLine={false}
+            duration={1}
             textClass={"text-2xl sm:text-4xl font-bold text-center mb-10"}
           />
 

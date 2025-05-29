@@ -31,7 +31,7 @@ export default function AnimatedText({
       tl.fromTo(
         titleRef.current,
         { autoAlpha: 0, y: 50 },
-        { duration: 0.5, autoAlpha: 1, y: 0 },
+        { duration: duration, autoAlpha: 1, y: 0 },
         ">"
       );
 
@@ -39,19 +39,17 @@ export default function AnimatedText({
         trigger: wrapperRef.current,
         animation: tl,
         start: "top 80%",
-        toggleActions: "play pause play pause",
-      });
-    }, wrapperRef);
+        once: true
+        });
+    }, );
 
-     setTimeout(() => {
-    ScrollTrigger.refresh();
-  }, 100);
+
 
     return () => ctx.revert();
-  }, [wrapperRef]);
+  }, []);
 
   return (
-    <div ref={wrapperRef} className="flex items-center justify-center">
+    <div ref={wrapperRef} className="flex items-center justify-center mb-5">
       <div className="flex flex-col  w-fit">
         <div
           ref={titleRef}

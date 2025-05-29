@@ -22,7 +22,19 @@ export default function Project({ project, handleNext, handlePrev }) {
   };
 
   const handleTouchMove = (e) => {
-    touchEndX.current = e.changedTouches[0].clientX;
+    const x = e.changedTouches[0].clientX;
+    const y = e.changedTouches[0].clientY;
+    const deltaX = x - touchStartX.current;
+    const deltaY = y - e.changedTouches[0].clientY;
+
+    touchEndX.current = x;
+
+    const angle = Math.abs(deltaY / deltaX); // tan(theta)
+
+    // თუ კუთხე ძალიან ბრტყელია (მეტად ჰორიზონტალური), დაბლოკე scroll
+    if (angle < 0.5) {
+      e.preventDefault(); // ეს წყვეტს ვერტიკალურ scroll-ს
+    }
   };
 
   const handleTouchEnd = () => {
@@ -101,7 +113,8 @@ export default function Project({ project, handleNext, handlePrev }) {
 
   return (
     <div
-      className="relative px-5"
+      className="relative px-5 touch-pan-y"
+      style={{ touchAction: "pan-y" }}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
@@ -121,7 +134,8 @@ export default function Project({ project, handleNext, handlePrev }) {
         >
           <img
             src={project.img}
-            alt=""
+            alt={project.img}
+            loading="lazy"
             className="rounded-md sm:rounded-xl w-[600px] md:w-[700px] lg:w-[800px]"
           />
         </div>

@@ -90,7 +90,7 @@ export default function Menu() {
         <Hamburger
           toggled={isOpen}
           toggle={handleToggle}
-          size={48}
+          size={44}
           rounded
           distance="lg"
           duration={0.5}

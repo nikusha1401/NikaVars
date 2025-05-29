@@ -67,7 +67,7 @@ body {
   inset: 0;
   background-image: url("/assets/star-textured.webp");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-attachment: fixed;
   background-position: center;
   display: flex;
@@ -123,6 +123,9 @@ body {
 
 @media (max-width: 768px) {
   body {
-    background-attachment: unset;
+
+    background-image: none;
+      background-color: black;
+
   }
 }

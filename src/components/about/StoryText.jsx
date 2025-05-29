@@ -11,14 +11,13 @@ export default function StoryText({ text, active }) {
 
     const el = nodeRef.current;
 
-    // Animate out
     gsap.to(el, {
       opacity: 0,
       x: -300,
       duration: 0.3,
       ease: "power2.in",
       onComplete: () => {
-        setDisplayedText(text); // Change text
+        setDisplayedText(text); 
         gsap.fromTo(
           el,
           { opacity: 0, x: 300 },

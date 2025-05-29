@@ -17,18 +17,18 @@ export const beckend = [
   { name: "mongoDB" },
   { name: "redis" },
   { name: "jwt" },
-  { name: "SEO" },
+  { name: "seo" },
   { name: "Git" },
   { name: "GitHub" },
   { name: "npm" },
-  { name: "Nginx" },
+  { name: "nginx" },
   { name: "digital-ocean" },
 ];
 
 export const inProgress = [
   { name: "python" },
   { name: "django" },
-  { name: "openAI" },
+  { name: "openai" },
   { name: "docker" },
   { name: "kubernetes" },
 
@@ -39,8 +39,8 @@ export const otherTechs = [
   { name: "Adobe-Illustrator" },
   { name: "Adobe-Bridge" },
   { name: "Adobe-Premiere" },
-  { name: "Canva" },
-  { name: "Excel" },
+  { name: "canva" },
+  { name: "excel" },
   { name: "Meta-Ads-Manager" },
   { name: "Google-Ads" },
   { name: "wix" },
@@ -51,7 +51,7 @@ export const contacts = [
   { name: "Linkedin", href: null },
   { name: "Mail", href: "mailto:nikusha1401@gmail.com" },
   {
-    name: "WhatsApp",
+    name: "whatsApp",
     href: "https://call.whatsapp.com/voice/wVd48uaJMwLUuhrKPrrSHi",
   },
 ];
