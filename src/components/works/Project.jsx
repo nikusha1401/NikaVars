@@ -40,12 +40,11 @@ export default function Project({ project, handleNext, handlePrev }) {
 
     const minSwipeDistance = 50;
 
-    // დავრწმუნდეთ რომ ჰორიზონტალური swipe-ია და საკმარისად გრძელი
     if (absDeltaX > absDeltaY && absDeltaX > minSwipeDistance) {
       if (deltaX > 0) {
-        handlePrev(); // swipe right
+        handlePrev();
       } else {
-        handleNext(); // swipe left
+        handleNext();
       }
     }
   };
@@ -73,12 +72,12 @@ export default function Project({ project, handleNext, handlePrev }) {
     }
 
     const ctx = gsap.context(() => {
-      const split = new SplitText(textRef.current, {
-        type: "words",
-      });
+      const split = new SplitText(textRef.current, { type: "words" });
 
       const tl = gsap.timeline();
-      tl.set(imgRef.current, { autoAlpha: 0, x: -60 });
+
+      // საწყისი პოზიცია სურათისთვის
+      gsap.set(imgRef.current, { autoAlpha: 0, x: -60 });
 
       tl.from(titleRef.current, { autoAlpha: 0, y: 50, duration: 0.8 })
         .from(
@@ -93,7 +92,6 @@ export default function Project({ project, handleNext, handlePrev }) {
           },
           "<"
         )
-        .to(imgRef.current, { autoAlpha: 1, x: 0, duration: 1 }, "<")
         .from(roleContRef.current, { autoAlpha: 0, x: 100, duration: 1 }, "<")
         .from(".logos", { opacity: 0, duration: 0.8 }, "<0.2")
         .from(btnRef.current, { opacity: 0, y: 50, duration: 0.6 }, "<")
@@ -113,6 +111,11 @@ export default function Project({ project, handleNext, handlePrev }) {
     };
   }, [project]);
 
+  // onLoad ჰენდლერი - აჩვენებს სურათს მხოლოდ ჩატვირთვის შემდეგ
+  const handleImageLoad = () => {
+    gsap.to(imgRef.current, { autoAlpha: 1, x: 0, duration: 1 });
+  };
+
   return (
     <div
       className="relative px-5 touch-pan-y"
@@ -122,7 +125,7 @@ export default function Project({ project, handleNext, handlePrev }) {
       onTouchEnd={handleTouchEnd}
     >
       <div
-        className="font-bold text-2xl md:text-4xl w-full text-center  py-2 flex justify-start gap-2"
+        className="font-bold text-2xl md:text-4xl w-full text-center py-2 flex justify-start gap-2"
         ref={roleContRef}
       >
         <span>My Role:</span>
@@ -135,8 +138,10 @@ export default function Project({ project, handleNext, handlePrev }) {
           className="overflow-hidden xl flex items-center justify-center"
         >
           <img
+            key={project.img} // უნიკალური key ფლიკერის ასარიდებლად
             src={project.img}
-            alt={project.img}
+            alt={project.name}
+            onLoad={handleImageLoad} // სურათის გამოჩენა ჩატვირთვის შემდეგ
             className="rounded-md sm:rounded-xl w-[600px] md:w-[700px] lg:w-[800px]"
           />
         </div>
@@ -164,24 +169,17 @@ export default function Project({ project, handleNext, handlePrev }) {
           >
             <Button
               text={"View Live"}
-              className={
-                "border-1 text-md sm:text-lg px-3 md:px-5 py-0.5 rounded-full hover:bg-white  hover:text-black transition cursor-pointer"
-              }
+              className="border-1 text-md sm:text-lg px-3 md:px-5 py-0.5 rounded-full hover:bg-white hover:text-black transition cursor-pointer"
             />
             <Button
               text={"Git Repo"}
-              className={
-                "border-1 text-md sm:text-lg  px-3 md:px-5 py-0.5 rounded-full hover:bg-white  hover:text-black transition cursor-pointer"
-              }
+              className="border-1 text-md sm:text-lg px-3 md:px-5 py-0.5 rounded-full hover:bg-white hover:text-black transition cursor-pointer"
             />
           </div>
+
           <div ref={navRef} className="flex justify-center gap-4">
-            <button onClick={handlePrev} className="">
-              ← Prev
-            </button>
-            <button onClick={handleNext} className="">
-              Next →
-            </button>
+            <button onClick={handlePrev}>← Prev</button>
+            <button onClick={handleNext}>Next →</button>
           </div>
         </div>
       </div>
