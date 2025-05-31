@@ -135,14 +135,14 @@ export default function Project({ project, handleNext, handlePrev }) {
       <div className="flex flex-col md:flex-row gap-2 md:gap-15 xl:gap-20">
         <div
           ref={imgRef}
-          className="overflow-hidden xl flex items-center justify-center"
+          className="overflow-hidden w-full flex items-center justify-center"
         >
           <img
             key={project.img} // უნიკალური key ფლიკერის ასარიდებლად
             src={project.img}
             alt={project.name}
             onLoad={handleImageLoad} // სურათის გამოჩენა ჩატვირთვის შემდეგ
-            className="rounded-md sm:rounded-xl w-[600px] md:w-[700px] lg:w-[800px]"
+            className="rounded-md sm:rounded-xl"
           />
         </div>
         <div className="flex flex-col gap-5 md:gap-7 xl:gap-10 justify-center items-center flex-1/3">
