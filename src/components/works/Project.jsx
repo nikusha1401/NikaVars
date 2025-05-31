@@ -134,7 +134,6 @@ export default function Project({ project, handleNext, handlePrev }) {
           <img
             src={project.img}
             alt={project.img}
-            loading="lazy"
             className="rounded-md sm:rounded-xl w-[600px] md:w-[700px] lg:w-[800px]"
           />
         </div>

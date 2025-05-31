@@ -14,15 +14,15 @@ export default function TechsBox({ title, titleClass, techs, withLine = true, lo
         const logos = boxRef.current.querySelectorAll(".tech-logo");
         const tl = gsap.timeline();
 
-        tl.set(titleRef?.current, { opacity: 0, y: 50 });
-        tl.set(logos, { opacity: 0, x: 40 });
+        tl.set(titleRef?.current, { autoAlpha: 0, y: 50 });
+        tl.set(logos, { autoAlpha: 0, x: 40 });
 
-        tl.to(titleRef?.current, { opacity: 1, y: 0, duration: 1 });
+        tl.to(titleRef?.current, { autoAlpha: 1, y: 0, duration: 1 });
 
         tl.to(
           logos,
           {
-            opacity: 1,
+            autoAlpha: 1,
             x: 0,
             ease: "power2.out",
             duration: 0.4,

@@ -39,7 +39,6 @@ const Tech = React.memo(function Tech({ tech, width, onClick, target = "_blank" 
         src={`/assets/logos/${name}.svg`}
         alt={name}
         title={name}
-        loading="lazy"
       />
       <div className="transform transition-opacity text-nowrap duration-500 opacity-0 group-hover:opacity-100">
         <span className="text-center">{name}</span>
