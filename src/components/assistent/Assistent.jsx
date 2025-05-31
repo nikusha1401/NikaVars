@@ -43,7 +43,7 @@ export default function Assistant() {
 
   const talkContent = useMemo(
     () => ({
-      aboutme: {
+      about: {
         title: "Hi, I am Nika and here is about me",
         buttons: [
           {
@@ -69,7 +69,7 @@ export default function Assistant() {
             label: "See About Me",
             onClick: () => {
               flyToTop();
-              smoother?.scrollTo("#aboutme", true, "top");
+              smoother?.scrollTo("#about", true, "top");
             },
           },
         ],
@@ -100,7 +100,7 @@ export default function Assistant() {
             <img
               src="/assets/about.webp"
               alt="assistant image"
-              width={isSmallScreen ? "60px" : "80px"}
+              width={isSmallScreen ? "50px" : "80px"}
             />
           </div>
           <div

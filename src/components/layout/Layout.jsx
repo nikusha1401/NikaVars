@@ -34,7 +34,7 @@ export default function Layout() {
           <ActiveStoryProvider>
             <Loader startRender={() => setRender(true)} />
             {!loading && <Header />}
-            {!loading && <Assistent />}
+            
             <main>
               <div id="smooth-wrapper">
                 <div id="smooth-content">

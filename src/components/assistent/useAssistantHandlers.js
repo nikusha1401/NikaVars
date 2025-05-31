@@ -86,10 +86,10 @@ export const useAssistantHandlers = ({
 
   const onClick = useCallback(() => {
     if (position === "center") {
-      if (activeSection === "aboutme") setActive("bio");
+      if (activeSection === "about") setActive("bio");
       flyToTop();
     } else {
-      if (activeSection === "aboutme") setActive(false);
+      if (activeSection === "about") setActive(false);
       flyToCenter();
     }
   }, [position, activeSection, setActive, flyToTop, flyToCenter]);

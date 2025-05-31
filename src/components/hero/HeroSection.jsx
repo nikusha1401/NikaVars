@@ -62,7 +62,7 @@ const HeroSection = ({ withBg, loading }) => {
             <ScrollButton
               text={"About Me"}
               buttonClass="mt-6 px-6 py-2 font-bold bg-white text-black rounded-full  hover:bg-[#18ff61] transition cursor-pointer"
-              idSelector={"#aboutme"}
+              idSelector={"#about"}
             />
           </div>
         </>
