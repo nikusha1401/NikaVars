@@ -78,9 +78,9 @@ export default function Project({ project, handleNext, handlePrev }) {
       });
 
       const tl = gsap.timeline();
-      tl.set(imgRef.current, { opacity: 0, x: -60 });
+      tl.set(imgRef.current, { autoAlpha: 0, x: -60 });
 
-      tl.from(titleRef.current, { opacity: 0, y: 50, duration: 0.8 })
+      tl.from(titleRef.current, { autoAlpha: 0, y: 50, duration: 0.8 })
         .from(
           split.words,
           {
@@ -93,8 +93,8 @@ export default function Project({ project, handleNext, handlePrev }) {
           },
           "<"
         )
-        .to(imgRef.current, { opacity: 1, x: 0, duration: 1 }, "<0.1")
-        .from(roleContRef.current, { opacity: 0, x: 100, duration: 1 }, "<")
+        .to(imgRef.current, { autoAlpha: 1, x: 0, duration: 1 }, "<")
+        .from(roleContRef.current, { autoAlpha: 0, x: 100, duration: 1 }, "<")
         .from(".logos", { opacity: 0, duration: 0.8 }, "<0.2")
         .from(btnRef.current, { opacity: 0, y: 50, duration: 0.6 }, "<")
         .from(navRef.current, { opacity: 0, y: 50, duration: 0.8 }, "<");
