@@ -15,35 +15,38 @@ export default function Project({ project, handleNext, handlePrev }) {
   const btnRef = useRef(null);
   const navRef = useRef(null);
   const touchStartX = useRef(0);
+  const touchStartY = useRef(0);
   const touchEndX = useRef(0);
+  const touchEndY = useRef(0);
 
   const handleTouchStart = (e) => {
-    touchStartX.current = e.changedTouches[0].clientX;
+    const touch = e.touches[0];
+    touchStartX.current = touch.clientX;
+    touchStartY.current = touch.clientY;
   };
 
   const handleTouchMove = (e) => {
-    const x = e.changedTouches[0].clientX;
-    const y = e.changedTouches[0].clientY;
-    const deltaX = x - touchStartX.current;
-    const deltaY = y - e.changedTouches[0].clientY;
-
-    touchEndX.current = x;
-
-    const angle = Math.abs(deltaY / deltaX); 
-
-    if (angle < 0.4) {
-      e.preventDefault(); // ეს წყვეტს ვერტიკალურ scroll-ს
-    }
+    const touch = e.touches[0];
+    touchEndX.current = touch.clientX;
+    touchEndY.current = touch.clientY;
   };
 
   const handleTouchEnd = () => {
-    const distance = touchStartX.current - touchEndX.current;
+    const deltaX = touchEndX.current - touchStartX.current;
+    const deltaY = touchEndY.current - touchStartY.current;
+
+    const absDeltaX = Math.abs(deltaX);
+    const absDeltaY = Math.abs(deltaY);
+
     const minSwipeDistance = 50;
 
-    if (distance > minSwipeDistance) {
-      handleNext(); // swipe left
-    } else if (distance < -minSwipeDistance) {
-      handlePrev(); // swipe right
+    // დავრწმუნდეთ რომ ჰორიზონტალური swipe-ია და საკმარისად გრძელი
+    if (absDeltaX > absDeltaY && absDeltaX > minSwipeDistance) {
+      if (deltaX > 0) {
+        handlePrev(); // swipe right
+      } else {
+        handleNext(); // swipe left
+      }
     }
   };
 
