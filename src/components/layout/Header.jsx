@@ -6,6 +6,7 @@ import Assistent from "../assistent/Assistent";
 
 export default function Header() {
   const smoother = useScrollSmoother()
+
   useGSAP(() => {
     gsap.from("#header", {
       opacity: 0,
@@ -26,7 +27,9 @@ export default function Header() {
       ></div>
       <div id="logo"
         className="scale-80 sm:scale-100 pointer-events-auto z-50 cursor-pointer"
-        onClick={() => smoother?.scrollTo("resume", true, "top")}
+        onClick={() => {
+          smoother?.scrollTo(0, true);
+         } }
       >
         <img src="/assets/logo-white.svg" alt="" width={80} className="z-200" />
       </div>

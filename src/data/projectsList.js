@@ -1,7 +1,7 @@
 export const projectsList = [
     {
       name: "Courier Service App",
-      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti ea alias autem quaerat facilis quae placeat unde accusamus,",
+      text: "A modern, high-performance application providing complete service solutions for courier companies, with dedicated interfaces for admins, couriers, and merchants.",
       img: "/assets/delly.jpg",
       roles: ["Developer", "UI/UX Designer", "Creator"],
       techs: ["react", "nodejs", "postgre", "redis"]

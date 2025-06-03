@@ -17,7 +17,6 @@ function Loader({ startRender }) {
       type: "chars",
     });
 
-    // Step 1: Animate the title
     gsap.from(split.chars, {
       opacity: 0,
       y: 50,
@@ -58,11 +57,11 @@ function Loader({ startRender }) {
     active && (
       <div
         ref={containerRef}
-        className="loader fixed inset-0 bg-black text-white z-50 flex flex-col items-center justify-center pointer-events-none"
+        className="loader "
       >
 
         <div>
-            <h1 ref={textRef}>
+            <h1 ref={textRef} className="text-white text-5xl sm:text-6xl font-black">
           Nika Vars
         </h1>
 

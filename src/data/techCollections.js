@@ -28,10 +28,11 @@ export const beckend = [
 export const inProgress = [
   { name: "python" },
   { name: "django" },
+  {name: "GraphQL"},
   { name: "openai" },
   { name: "docker" },
   { name: "kubernetes" },
-
+  
 ];
 
 export const otherTechs = [

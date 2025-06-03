@@ -39,6 +39,7 @@ export default function AnimatedText({
         trigger: wrapperRef.current,
         animation: tl,
         start: "top 80%",
+        markers: true,
         once: true
         });
     }, );

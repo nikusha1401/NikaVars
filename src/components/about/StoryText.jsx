@@ -17,7 +17,7 @@ export default function StoryText({ text, active }) {
       duration: 0.3,
       ease: "power2.in",
       onComplete: () => {
-        setDisplayedText(text); 
+        setDisplayedText(text);
         gsap.fromTo(
           el,
           { opacity: 0, x: 300 },
@@ -30,10 +30,13 @@ export default function StoryText({ text, active }) {
   }, [active, text, prevActive]);
 
   return (
-    <div className="p-1 sm:p-6 h-[50%] w-full overflow-y-auto overflow-x-hidden sm:text-center">
-      <span id="story" ref={nodeRef} className="text-xl block">
-        {displayedText}
-      </span>
+    <div className="p-1 sm:px-20 xl:px-25 h-[50%] w-full overflow-y-auto overflow-x-hidden">
+      <div id="story" ref={nodeRef} className="text-xl block space-y-4">
+        {displayedText.split('\n\n').map((para, idx) => (
+          <p key={idx} className="whitespace-pre-line">{para}</p>
+        ))}
+      </div>
     </div>
   );
+  
 }

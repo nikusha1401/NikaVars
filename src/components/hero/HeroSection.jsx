@@ -37,7 +37,6 @@ const HeroSection = ({ withBg, loading }) => {
             ref={container}
             className="relative z-20 flex flex-col items-center justify-center h-full text-white text-center px-4 max-w-80%"
           >
-            
             <div className="flex flex-col font-bold gap-1">
               <span className="text-xl xs:text-2xl sm:text-3xl ">
                 Hi, I'm

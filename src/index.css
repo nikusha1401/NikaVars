@@ -67,20 +67,17 @@ body {
   inset: 0;
   background-image: url("/assets/star-textured.webp");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-attachment: fixed;
   background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  pointer-events: none;
 }
 
-.loader h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  color: white; /* თეთრი ფერი */
-}
+
 
 .char {
   display: inline-block;
