@@ -20,7 +20,7 @@ export default function ResumeSection() {
             text={"Technologies I Use to Build Scalable, Efficient, and Maintainable Software"}
             withLine={false}
             duration={1}
-            textClass={"text-2xl sm:text-4xl font-bold text-center mb-10"}
+            textClass={"text-xl sm:text-4xl font-bold text-center mb-10"}
           />
 
           <div className="flex flex-col gap-5 sm:gap-15">

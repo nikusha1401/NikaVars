@@ -39,8 +39,8 @@ export default function ContactSection() {
         </div>
         <div className="w-full flex flex-col items-center justify-around sm:w-1/2 text-center sm:text-left">
           <AnimatedText
-            text={"Im Ready to make some great experience from Worldwide"}
-            textClass={"text-3xl text-center font-bold mb-10"}
+            text={"I’m always open to great ideas and offers from all over the world."}
+            textClass={"text-2xl sm:text-4xl text-center font-bold mb-10"}
             withLine={false}
             duration={1}
           />

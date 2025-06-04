@@ -37,20 +37,20 @@ const HeroSection = ({ withBg, loading }) => {
             ref={container}
             className="relative z-20 flex flex-col items-center justify-center h-full text-white text-center px-4 max-w-80%"
           >
-            <div className="flex flex-col font-bold gap-1">
-              <span className="text-xl xs:text-2xl sm:text-3xl ">
+            <div className="flex flex-col font-bold xl:font-black gap-1">
+              <span className="text-xl xs:text-2xl font-bold sm:text-3xl ">
                 Hi, I'm
               </span>
-              <span className="text-xl xs:text-3xl sm:text-3xl">
+              <span className="text-xl xs:text-3xl font-bold  sm:text-3xl">
                 Nika Varsimashvili
               </span>
-              <span className="text-2xl xs:text-4xl sm:text-7xl">
+              <span className="text-2xl xs:text-4xl sm:text-6xl xl:text-8xl">
                 Full-Stack Developer
               </span>
-              <span className="text-2xl xs:text-4xl sm:text-7xl">
+              <span className="text-2xl xs:text-4xl sm:text-6xl font-bold">
                 &
               </span>
-              <span className="text-2xl xs:text-4xl sm:text-7xl">
+              <span className="text-2xl xs:text-4xl sm:text-6xl xl:text-8xl">
                 UI/UX designer
               </span>
             </div>

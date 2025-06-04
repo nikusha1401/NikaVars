@@ -144,13 +144,13 @@ export default function Project({ project, handleNext, handlePrev }) {
         <div className="flex flex-col flex-1/3 gap-5 md:gap-7 xl:gap-10 justify-center items-center">
           <h1
             ref={titleRef}
-            className="text-3xl md:text-2xl lg:text-4xl text-center font-bold py-1"
+            className="text-2xl sm:text-3xl lg:text-4xl text-center font-bold py-1"
           >
             {project.name}
           </h1>
 
           <div>
-            <p ref={textRef} className="text-xl sm:text-lg text-center">
+            <p ref={textRef} className="text-base sm:text-lg text-center">
               {project.text}
             </p>
           </div>

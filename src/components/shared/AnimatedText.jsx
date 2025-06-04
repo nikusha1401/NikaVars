@@ -39,7 +39,6 @@ export default function AnimatedText({
         trigger: wrapperRef.current,
         animation: tl,
         start: "top 80%",
-        markers: true,
         once: true
         });
     }, );
@@ -54,12 +53,12 @@ export default function AnimatedText({
       <div className="flex flex-col  w-fit">
         <div
           ref={titleRef}
-          className={textClass || " flex text-5xl  opacity-100"}
+          className={"flex opacity-100"}
         >
           <span
             className={
               textClass ||
-              "whitespace-nowrap text-5xl sm:text-6xl font-black"
+              "whitespace-nowrap text-4xl sm:text-6xl font-black"
             }
           >
             {text}
