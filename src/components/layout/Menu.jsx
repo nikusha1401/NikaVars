@@ -78,7 +78,7 @@ export default function Menu() {
           isOpen ? "block" : "hidden"
         }`}
       >
-        {["About", "Resume", "works", "Contact"].map((text, index) => (
+        {["About", "Resume", "Works", "Contact"].map((text, index) => (
           <ScrollButton
             key={index}
             text={text}
