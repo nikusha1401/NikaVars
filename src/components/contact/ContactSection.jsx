@@ -33,7 +33,7 @@ export default function ContactSection() {
       sectionClass="min-h-screen pt-25 sm:pt-40 pb-10 px-3 md:px-10 xl:px-30"
     >
       <AnimatedText text={"Contact"} trigger={"#contact"} />
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-10">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-10">
         <div ref={globeRef} className="flex-1 flex justify-around">
           <Globe />
         </div>
@@ -41,6 +41,7 @@ export default function ContactSection() {
           <AnimatedText
             text={"I’m always open to great ideas and offers from all over the world."}
             textClass={"text-2xl sm:text-4xl text-center font-bold mb-10"}
+            textElement={"p"}
             withLine={false}
             duration={1}
           />

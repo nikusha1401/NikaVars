@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useTexture } from "@react-three/drei";
 
 function Earth({ globeRef }) {
-  const texture = useTexture("/assets/earth.jpg");
+  const texture = useTexture("/assets/earth.webp");
 
   return (
     <mesh ref={globeRef}>
@@ -21,8 +21,9 @@ export default function Globe() {
     <div
       className={`relative 
         w-[250px] h-[250px] 
-        sm:w-[400px] sm:h-[400px] 
-        md:w-[500px] md:h-[500px]
+        sm:w-[300px] sm:h-[300px]
+        md:w-[400px] md:h-[400px]  
+        xl:w-[500px] xl:h-[500px]
         ${isGrabbing ? "cursor-grabbing" : "cursor-grab"}
       `}
       onMouseDown={() => setIsGrabbing(true)}

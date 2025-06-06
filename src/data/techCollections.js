@@ -49,7 +49,8 @@ export const otherTechs = [
 
 export const contacts = [
   { name: "GitHub", href: "https://github.com/nikusha1401/" },
-  { name: "Linkedin", href: null },
+  { name: "Linkedin", href: "https://www.linkedin.com/in/nikavars/" },
+  { name: "Facebook", href: "https://www.facebook.com/nikusha1401/" },
   { name: "Mail", href: "mailto:nikusha1401@gmail.com" },
   {
     name: "whatsApp",

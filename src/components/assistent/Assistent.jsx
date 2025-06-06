@@ -5,7 +5,7 @@ import { useActiveSection } from "../../contexts/ActiveSectionContext";
 import { useActiveStory } from "../../contexts/ActiveStoryContext";
 import { useScrollSmoother } from "../../contexts/ScrollSmootherContext";
 import TalkBox from "./TalkBox";
-import Overlay from "../shared/Overlay"
+import Overlay from "../shared/Overlay";
 import { useAssistantHandlers } from "./useAssistantHandlers";
 
 export default function Assistant() {
@@ -27,7 +27,7 @@ export default function Assistant() {
     setPosition,
     setActive,
     activeSection,
-    position
+    position,
   });
 
   useEffect(() => {
@@ -44,7 +44,7 @@ export default function Assistant() {
   const talkContent = useMemo(
     () => ({
       about: {
-        title: "Hi, I am Nika and here is about me",
+        title: "Want to learn a little more about who I am?",
         buttons: [
           {
             label: "Bio",
@@ -60,16 +60,52 @@ export default function Assistant() {
               flyToTop();
             },
           },
+          {
+            label: "Hobby",
+            onClick: () => {
+              setActive("hobby");
+              flyToTop();
+            },
+          },
         ],
       },
       hero: {
-        title: "Hi, I am Nika – here is my hero section",
+        title:
+          "Hello, I’m Nika 😊 welcome to my portfolio. I’m always ready to assist you 👋",
+      },
+      works: {
+        title: "Enjoyed my projects? Let’s bring your ideas to life together.",
         buttons: [
           {
-            label: "See About Me",
+            label: "Contact Me",
             onClick: () => {
               flyToTop();
-              smoother?.scrollTo("#about", true, "top");
+              smoother?.scrollTo("#contact", true, "top");
+            },
+          },
+        ],
+      },
+
+      contact: {
+        title: "I’m here 24/7 to hear your offer — wherever you are.",
+        buttons: [
+          {
+            label: "Email Me",
+            onClick: () => {
+              window.location.href = "mailto:nikavars.com@gmail.com";
+            },
+          },
+        ],
+      },
+
+      resume: {
+        title: "I believe in continuous learning and self-development.",
+        buttons: [
+          {
+            label: "See My Projects",
+            onClick: () => {
+              flyToTop();
+              smoother?.scrollTo("#works", true, "top");
             },
           },
         ],
@@ -105,7 +141,7 @@ export default function Assistant() {
           </div>
           <div
             ref={talkRef}
-            className="hidden absolute top-10 left-0 scale-0 opacity-0 pt-[25px] pr-[28px] pb-[112px] pl-[20px] z-30 transition pointer-events-auto"
+            className="hidden absolute top-10 left-0 scale-0 opacity-0 pt-[20px] pr-[28px] pb-[112px] pl-[20px] z-30 transition pointer-events-auto"
             style={{
               backgroundImage: "url('/assets/talk.png')",
               backgroundRepeat: "no-repeat",

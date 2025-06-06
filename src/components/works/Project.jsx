@@ -129,25 +129,25 @@ export default function Project({ project, handleNext, handlePrev }) {
         <span className="font-black" ref={roleRef}></span>
       </div>
 
-      <div className="flex flex-col md:flex-row gap-2 md:gap-15 xl:gap-20">
+      <div className="flex flex-col lg:flex-row gap-2 md:gap-15 xl:gap-20">
         <div
           ref={imgRef}
-          className="flex-2/3 w-full aspect-[3/2] flex items-center justify-center overflow-hidden rounded-md xl:rounded-2xl"
+          className="flex-2/3 aspect-[3/2] flex items-center justify-center overflow-hidden rounded-md xl:rounded-2xl"
         >
           <img
             key={project.img}
             src={project.img}
             alt={project.name}
-            className="w-full h-full object-fill"
+            className="w-full object-fill"
           />
         </div>
         <div className="flex flex-col flex-1/3 gap-5 md:gap-7 xl:gap-10 justify-center items-center">
-          <h1
+          <h2
             ref={titleRef}
             className="text-2xl sm:text-3xl lg:text-4xl text-center font-bold py-1"
           >
             {project.name}
-          </h1>
+          </h2>
 
           <div>
             <p ref={textRef} className="text-base sm:text-lg text-center">
@@ -163,7 +163,17 @@ export default function Project({ project, handleNext, handlePrev }) {
             ref={btnRef}
             className="flex flex-row gap-10 sm:gap-5 xl:gap-10 text-nowrap"
           >
-            <Button
+
+            {project.links?.map((btn, i) => (
+              <a
+                href={btn.href}
+                target="_blank"
+                className={
+                "border-1 text-md sm:text-lg px-3 md:px-5 py-0.5 rounded-full hover:bg-white  hover:text-black transition cursor-pointer"
+              }
+              >{btn.title }</a>
+            ))}
+            {/* <Button
               text={"View Live"}
               className={
                 "border-1 text-md sm:text-lg px-3 md:px-5 py-0.5 rounded-full hover:bg-white  hover:text-black transition cursor-pointer"
@@ -174,7 +184,7 @@ export default function Project({ project, handleNext, handlePrev }) {
               className={
                 "border-1 text-md sm:text-lg  px-3 md:px-5 py-0.5 rounded-full hover:bg-white  hover:text-black transition cursor-pointer"
               }
-            />
+            /> */}
           </div>
           <div ref={navRef} className="flex justify-center gap-4">
             <button onClick={handlePrev} className="">

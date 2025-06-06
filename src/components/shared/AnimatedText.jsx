@@ -5,6 +5,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 export default function AnimatedText({
   text,
   textClass,
+  textElement,
   withLine = true,
   duration = "0.5",
 }) {
@@ -48,6 +49,8 @@ export default function AnimatedText({
     return () => ctx.revert();
   }, []);
 
+  const Element = textElement || "h1"
+
   return (
     <div ref={wrapperRef} className="flex items-center justify-center mb-5">
       <div className="flex flex-col  w-fit">
@@ -55,14 +58,14 @@ export default function AnimatedText({
           ref={titleRef}
           className={"flex opacity-100"}
         >
-          <span
+          <Element
             className={
               textClass ||
               "whitespace-nowrap text-4xl sm:text-6xl font-black"
             }
           >
             {text}
-          </span>
+          </Element>
         </div>
         {withLine && (
           <div ref={lineRef} className="h-1 bg-white rounded-md w-full"></div>

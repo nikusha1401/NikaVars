@@ -19,6 +19,7 @@ export default function ResumeSection() {
           <AnimatedText
             text={"Technologies I Use to Build Scalable, Efficient, and Maintainable Software"}
             withLine={false}
+            textElement={"p"}
             duration={1}
             textClass={"text-xl sm:text-4xl font-bold text-center mb-10"}
           />

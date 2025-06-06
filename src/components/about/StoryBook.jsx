@@ -120,16 +120,17 @@ function StoryBook() {
             <StoryText text={storys[active]} active={active} />
 
             <div className="flex flex-row gap-5 text-nowrap" ref={scrollBtnRef}>
+               <ScrollButton
+                text="My Resume"
+                buttonClass="border-1 px-1 xs:px-5 py-1 rounded-full hover:bg-white hover:text-black transition cursor-pointer"
+                idSelector="#resume"
+              />
               <ScrollButton
-                text="See My Works"
+                text="My Projects"
                 buttonClass="border-1 px-1 xs:px-5 py-1 rounded-full hover:bg-white hover:text-black transition cursor-pointer"
                 idSelector="#works"
               />
-              <ScrollButton
-                text="More about me"
-                buttonClass="border-1 px-1 xs:px-5 py-1 rounded-full hover:bg-white hover:text-black transition cursor-pointer"
-                idSelector="#contact"
-              />
+             
             </div>
           </div>
         </div>

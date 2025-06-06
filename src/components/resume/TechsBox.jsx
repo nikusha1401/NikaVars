@@ -17,7 +17,7 @@ export default function TechsBox({ title, titleClass, techs, withLine = true, lo
         tl.set(titleRef?.current, { autoAlpha: 0, y: 50 });
         tl.set(logos, { autoAlpha: 0, x: 40 });
 
-        tl.to(titleRef?.current, { autoAlpha: 1, y: 0, duration: 1 });
+        tl.to(titleRef?.current, { autoAlpha: 1, y: 0, duration: 0.8 });
 
         tl.to(
           logos,
@@ -25,14 +25,13 @@ export default function TechsBox({ title, titleClass, techs, withLine = true, lo
             autoAlpha: 1,
             x: 0,
             ease: "power2.out",
-            duration: 0.4,
+            duration: 0.3,
             stagger: 0.1,
           },
-          "+=0.2"
         );
 
         if (withLine && lineRef.current) {
-          tl.to(lineRef.current, { width: "100%", duration: 1 }, "<0.5");
+          tl.to(lineRef.current, { width: "100%", duration: 1 }, "<0.4");
         }
 
         ScrollTrigger.create({
@@ -51,9 +50,9 @@ export default function TechsBox({ title, titleClass, techs, withLine = true, lo
   return (
     <div className="flex flex-col gap-5 sm:gap-10 py-2 sm:py-5" ref={boxRef}>
       {title && (
-        <h1 className={titleClass || "text-xl font-bold text-center"} ref={titleRef}>
+        <h2 className={titleClass || "text-xl font-bold text-center"} ref={titleRef}>
           {title}
-        </h1>
+        </h2>
       )}
 
       <div className="flex flex-wrap justify-center gap-5 sm:gap-10">
