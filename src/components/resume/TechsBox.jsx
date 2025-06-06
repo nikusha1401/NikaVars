@@ -10,6 +10,7 @@ export default function TechsBox({ title, titleClass, techs, withLine = true, lo
 
   useEffect(
     () => {
+      if (!boxRef.current || !titleRef.current) return;
       const ctx = gsap.context(() => {
         const logos = boxRef.current.querySelectorAll(".tech-logo");
         const tl = gsap.timeline();

@@ -10,29 +10,26 @@ export default function Menu() {
   const linksRef = useRef([]);
   const tlRef = useRef(null);
 
-  useGSAP(
-    () => {
-      const ctx = gsap.context(() => {
-        tlRef.current = gsap.timeline({ paused: true });
+  useGSAP(() => {
+    const ctx = gsap.context(() => {
+      tlRef.current = gsap.timeline({ paused: true });
 
-        tlRef.current
-          .fromTo(
-            menuRef.current,
-            { opacity: 0, scale: 0.9 },
-            { opacity: 1, scale: 1, duration: 0.4, ease: "power2.out" }
-          )
-          .fromTo(
-            linksRef.current,
-            { opacity: 0, y: 20 },
-            { opacity: 1, y: 0, stagger: 0.1, duration: 0.3, ease: "power3.out" },
-            ">"
-          );
-      }, menuRef);
+      tlRef.current
+        .fromTo(
+          menuRef.current,
+          { opacity: 0, scale: 0.9 },
+          { opacity: 1, scale: 1, duration: 0.4, ease: "power2.out" }
+        )
+        .fromTo(
+          linksRef.current,
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, stagger: 0.1, duration: 0.3, ease: "power3.out" },
+          ">"
+        );
+    }, menuRef);
 
-      return () => ctx.revert();
-    },
-    [isOpen],
-  );
+    return () => ctx.revert();
+  }, [isOpen]);
 
   const handleToggle = (next) => {
     setIsOpen(next);
@@ -81,7 +78,7 @@ export default function Menu() {
           isOpen ? "block" : "hidden"
         }`}
       >
-        {["About", "Resume", "Works", "Contact"].map((text, index) => (
+        {["About", "Resume", "works", "Contact"].map((text, index) => (
           <ScrollButton
             key={index}
             text={text}

@@ -13,17 +13,19 @@ function Loader({ startRender }) {
   const { setLoading } = useLoading();
 
   useGSAP(() => {
-    const split = new SplitText(textRef.current, {
-      type: "chars",
-    });
+    document.fonts.ready.then(() => {
+      const split = new SplitText(textRef.current, {
+        type: "chars",
+      });
 
-    gsap.from(split.chars, {
-      opacity: 0,
-      y: 50,
-      stagger: 0.1,
-      duration: 0.9,
-      ease: "power3.out",
-      onComplete: startRender,
+      gsap.from(split.chars, {
+        opacity: 0,
+        y: 50,
+        stagger: 0.1,
+        duration: 0.9,
+        ease: "power3.out",
+        onComplete: startRender,
+      });
     });
   });
 
@@ -55,27 +57,25 @@ function Loader({ startRender }) {
 
   return (
     active && (
-      <div
-        ref={containerRef}
-        className="loader "
-      >
-
+      <div ref={containerRef} className="loader ">
         <div>
-            <h1 ref={textRef} className="text-white text-5xl sm:text-6xl font-black">
-          Nika Vars
-        </h1>
+          <h1
+            ref={textRef}
+            className="text-white text-5xl sm:text-6xl font-black"
+          >
+            Nika Vars
+          </h1>
 
-        <div
-          ref={progressCont}
-          className="w-full h-1 bg-white/20 rounded overflow-hidden opacity-0 will-change-transform"
-        >
           <div
-            ref={progressBarRef}
-            className="h-full bg-white origin-left scale-x-0 opacity-0 will-change-transform"
-          />
+            ref={progressCont}
+            className="w-full h-1 bg-white/20 rounded overflow-hidden opacity-0 will-change-transform"
+          >
+            <div
+              ref={progressBarRef}
+              className="h-full bg-white origin-left scale-x-0 opacity-0 will-change-transform"
+            />
+          </div>
         </div>
-        </div>
-        
       </div>
     )
   );

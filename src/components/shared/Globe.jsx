@@ -1,4 +1,4 @@
-import {  useState } from "react";
+import { useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useTexture } from "@react-three/drei";
 
@@ -16,7 +16,6 @@ function Earth({ globeRef }) {
 export default function Globe() {
   const [isGrabbing, setIsGrabbing] = useState(false);
 
-
   return (
     <div
       className={`relative 
@@ -30,10 +29,18 @@ export default function Globe() {
       onMouseUp={() => setIsGrabbing(false)}
       onMouseLeave={() => setIsGrabbing(false)}
     >
-      <Canvas camera={{ position: [0, 0, 9] }} style={{ width: "100%", height: "100%" }}>
+      <Canvas
+        camera={{ position: [0, 0, 9] }}
+        style={{ width: "100%", height: "100%" }}
+      >
         <ambientLight intensity={15} />
         <directionalLight position={[10, 10, 10]} />
-        <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.8} />
+        <OrbitControls
+          enableZoom={false}
+          enablePan={false}
+          autoRotate
+          autoRotateSpeed={0.8}
+        />
         <Earth />
       </Canvas>
     </div>

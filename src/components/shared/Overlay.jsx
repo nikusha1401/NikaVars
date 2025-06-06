@@ -5,7 +5,7 @@ import { Transition } from "react-transition-group";
 export default function Overlay({ active }) {
   const nodeRef = useRef(null);
 
-    const onEnter = () => {
+  const onEnter = () => {
     gsap.fromTo(
       nodeRef.current,
       { opacity: 0, scale: 0.5 },
@@ -30,7 +30,6 @@ export default function Overlay({ active }) {
       in={active}
       mountOnEnter
       unmountOnExit
-      
     >
       <div ref={nodeRef} className="overlay-texture"></div>
     </Transition>

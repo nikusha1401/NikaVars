@@ -10,6 +10,7 @@ const HeroSection = ({ withBg, loading }) => {
   const container = useRef(null);
 
   useGSAP(() => {
+    if (!container.current) return;
     const tl = gsap.timeline({
       defaults: { ease: "sine.inOut" },
       scrollTrigger: {

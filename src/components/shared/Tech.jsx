@@ -1,7 +1,12 @@
 import React, { useRef } from "react";
 import gsap from "gsap";
 
-const Tech = React.memo(function Tech({ tech, width, onClick, target = "_blank" }) {
+const Tech = React.memo(function Tech({
+  tech,
+  width,
+  onClick,
+  target = "_blank",
+}) {
   const ref = useRef(null);
 
   const handlePointer = (scale) => (e) => {

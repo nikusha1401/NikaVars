@@ -4,7 +4,6 @@ import { Outlet } from "react-router";
 import Loader from "../shared/Loader";
 import { IntoLoadingContext } from "../../contexts/IntroLoadingContext";
 import { ActiveSectionProvider } from "../../contexts/ActiveSectionContext";
-import Assistent from "../assistent/Assistent";
 import { ActiveStoryProvider } from "../../contexts/ActiveStoryContext";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { ScrollSmootherContext } from "../../contexts/ScrollSmootherContext";

@@ -1,9 +1,7 @@
-import React, { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 import { useActiveSection } from "../../contexts/ActiveSectionContext";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useScrollFade } from "../../hooks/useScrollFade";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 
 export default function Section({ id, sectionClass, children }) {
   const { activeSection, setActiveSection } = useActiveSection();
@@ -21,17 +19,10 @@ export default function Section({ id, sectionClass, children }) {
         if (self.isActive) {
           setActiveSection(id);
         }
-
-        // ჰედერის გაშუქების კონტროლი
-        if (activeSection !== "hero") {
-          gsap.to("#header-overlay", { opacity: 1, duration: 0.4 });
-        } else {
-          gsap.to("#header-overlay", { opacity: 0, duration: 0.4 });
-        }
       },
     });
 
-    ScrollTrigger.refresh()
+    ScrollTrigger.refresh();
 
     return () => {
       trigger.kill();

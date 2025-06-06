@@ -1,5 +1,4 @@
 import { RouterProvider, createBrowserRouter } from "react-router";
-import "./css/App.css";
 import Layout from "./components/layout/Layout";
 import LandingPage from "./pages/LandingPage";
 

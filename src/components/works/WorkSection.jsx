@@ -12,7 +12,9 @@ export default function WorkSection() {
   }, []);
 
   const handlePrev = useCallback(() => {
-    setActiveProject((prev) => (prev - 1 + projectsList.length) % projectsList.length);
+    setActiveProject(
+      (prev) => (prev - 1 + projectsList.length) % projectsList.length
+    );
   }, []);
 
   return (

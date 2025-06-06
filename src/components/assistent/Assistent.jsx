@@ -1,4 +1,3 @@
-// Assistant.jsx
 import { useEffect, useRef, useState, useMemo } from "react";
 import { useMediaQuery } from "react-responsive";
 import { useActiveSection } from "../../contexts/ActiveSectionContext";

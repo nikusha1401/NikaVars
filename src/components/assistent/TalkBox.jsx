@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function TalkBox({ title, buttons = [] }) {
   return (
     <div

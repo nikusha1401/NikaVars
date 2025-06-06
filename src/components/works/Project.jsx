@@ -163,28 +163,18 @@ export default function Project({ project, handleNext, handlePrev }) {
             ref={btnRef}
             className="flex flex-row gap-10 sm:gap-5 xl:gap-10 text-nowrap"
           >
-
             {project.links?.map((btn, i) => (
               <a
+                key={i}
                 href={btn.href}
                 target="_blank"
                 className={
-                "border-1 text-md sm:text-lg px-3 md:px-5 py-0.5 rounded-full hover:bg-white  hover:text-black transition cursor-pointer"
-              }
-              >{btn.title }</a>
+                  "border-1 text-md sm:text-lg px-3 md:px-5 py-0.5 rounded-full hover:bg-white  hover:text-black transition cursor-pointer"
+                }
+              >
+                {btn.title}
+              </a>
             ))}
-            {/* <Button
-              text={"View Live"}
-              className={
-                "border-1 text-md sm:text-lg px-3 md:px-5 py-0.5 rounded-full hover:bg-white  hover:text-black transition cursor-pointer"
-              }
-            />
-            <Button
-              text={"Git Repo"}
-              className={
-                "border-1 text-md sm:text-lg  px-3 md:px-5 py-0.5 rounded-full hover:bg-white  hover:text-black transition cursor-pointer"
-              }
-            /> */}
           </div>
           <div ref={navRef} className="flex justify-center gap-4">
             <button onClick={handlePrev} className="">

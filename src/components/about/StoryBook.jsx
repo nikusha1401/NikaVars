@@ -6,10 +6,8 @@ import { useActiveStory } from "../../contexts/ActiveStoryContext";
 import ScrollButton from "../shared/ScrollButton";
 import StoryText from "./StoryText";
 import Button from "../shared/Button";
-import { storys } from "./StorysMap";
+import { storys } from "../../data/StorysMap";
 import AnimatedText from "../shared/AnimatedText";
-import { useActiveSection } from "../../contexts/ActiveSectionContext";
-
 
 function StoryBook() {
   const nodeRef = useRef(null);
@@ -31,30 +29,42 @@ function StoryBook() {
         tl.set("#buttons-cont", { opacity: 0, y: -30 });
         tl.set(scrollBtnRef.current, { opacity: 0, y: 30 });
 
-        tl.from(split.words, {
-          opacity: 0,
-          stagger: 0.04,
-          duration: 0.4,
-          ease: "power2.out",
-        }, "+=0.5")
-          .to(scrollBtnRef.current, {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: "power2.in"
-          }, "<0.5")
-          .to("#buttons-cont", {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "bounce.out"
-          }, "<1");
+        tl.from(
+          split.words,
+          {
+            opacity: 0,
+            stagger: 0.04,
+            duration: 0.4,
+            ease: "power2.out",
+          },
+          "+=0.5"
+        )
+          .to(
+            scrollBtnRef.current,
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.8,
+              ease: "power2.in",
+            },
+            "<0.5"
+          )
+          .to(
+            "#buttons-cont",
+            {
+              opacity: 1,
+              y: 0,
+              duration: 1,
+              ease: "bounce.out",
+            },
+            "<1"
+          );
 
         ScrollTrigger.create({
           trigger: "#story-book",
           animation: tl,
           start: "top 80%",
-          once: true
+          once: true,
         });
       });
     };
@@ -76,7 +86,7 @@ function StoryBook() {
       opacity: 0,
       x: 300,
       duration: 0.3,
-      ease: "power2.inOut"
+      ease: "power2.inOut",
     });
   }, []);
 
@@ -94,7 +104,11 @@ function StoryBook() {
         <div ref={nodeRef} className="flex-1/3 overflow-hidden" id="story-book">
           <div className="p-5 w-full sm:border-1 relative rounded-sm flex flex-col gap-3 sm:items-center justify-evenly h-[80vh] sm:overflow-x-hidden">
             <div className="flex flex-col gap-2 w-fit">
-              <AnimatedText text="ABOUT ME" trigger="#story-book" textClass={"whitespace-nowrap text-5xl sm:text-6xl font-black"} />
+              <AnimatedText
+                text="ABOUT ME"
+                trigger="#story-book"
+                textClass={"whitespace-nowrap text-5xl sm:text-6xl font-black"}
+              />
               <div
                 id="buttons-cont"
                 className="flex flex-row gap-3 sm:justify-center sm:mt-3 p-1 text-2xl"
@@ -120,7 +134,7 @@ function StoryBook() {
             <StoryText text={storys[active]} active={active} />
 
             <div className="flex flex-row gap-5 text-nowrap" ref={scrollBtnRef}>
-               <ScrollButton
+              <ScrollButton
                 text="My Resume"
                 buttonClass="border-1 px-1 xs:px-5 py-1 rounded-full hover:bg-white hover:text-black transition cursor-pointer"
                 idSelector="#resume"
@@ -130,7 +144,6 @@ function StoryBook() {
                 buttonClass="border-1 px-1 xs:px-5 py-1 rounded-full hover:bg-white hover:text-black transition cursor-pointer"
                 idSelector="#works"
               />
-             
             </div>
           </div>
         </div>
