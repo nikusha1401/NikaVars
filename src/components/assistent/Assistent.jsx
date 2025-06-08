@@ -143,7 +143,7 @@ export default function Assistant() {
             ref={talkRef}
             className="hidden absolute top-10 left-0 scale-0 opacity-0 pt-[20px] pr-[28px] pb-[112px] pl-[20px] z-30 transition pointer-events-auto"
             style={{
-              backgroundImage: "url('/assets/talk.png')",
+              backgroundImage: "url('/assets/talk.webp')",
               backgroundRepeat: "no-repeat",
               backgroundSize: "contain",
             }}
