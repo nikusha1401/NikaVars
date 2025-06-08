@@ -136,6 +136,7 @@ export default function Assistant() {
               src="/assets/about.webp"
               alt="assistant image"
               width={isSmallScreen ? "50px" : "80px"}
+              height={"auto"}
             />
           </div>
           <div

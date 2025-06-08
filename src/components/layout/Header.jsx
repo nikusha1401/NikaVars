@@ -42,7 +42,7 @@ export default function Header() {
           smoother?.scrollTo(0, true);
         }}
       >
-        <img src="/assets/logo-white.svg" alt="" width={80} className="z-200" />
+        <img src="/assets/logo-white.svg" alt="Nika Vars Logo" width={80} height={80} className="z-200" />
       </div>
       {<Assistent />}
       <Menu />

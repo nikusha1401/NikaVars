@@ -132,13 +132,13 @@ export default function Project({ project, handleNext, handlePrev }) {
       <div className="flex flex-col lg:flex-row gap-2 md:gap-15 xl:gap-20">
         <div
           ref={imgRef}
-          className="flex-2/3 aspect-[3/2] flex items-center justify-center overflow-hidden rounded-md xl:rounded-2xl"
+          className="flex-2/3 aspect-[3/2] flex items-center justify-center overflow-hidden"
         >
           <img
             key={project.img}
             src={project.img}
             alt={project.name}
-            className="w-full object-fill"
+            className="w-full object-fill rounded-md xl:rounded-lg"
           />
         </div>
         <div className="flex flex-col flex-1/3 gap-5 md:gap-7 xl:gap-10 justify-center items-center">

@@ -78,12 +78,6 @@ body {
 }
 
 
-
-.char {
-  display: inline-block;
-  opacity: 0;
-}
-
 .header {
   position: relative;
   width: 100%;
