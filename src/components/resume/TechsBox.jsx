@@ -39,7 +39,6 @@ export default function TechsBox({ title, titleClass, techs, withLine = true, lo
           trigger: boxRef.current,
           animation: tl,
           start: "top 80%",
-          markers: true,
           once: true,
         });
 
