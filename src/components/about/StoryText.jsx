@@ -29,12 +29,33 @@ export default function StoryText({ text, active }) {
     setPrevActive(active);
   }, [active, text, prevActive]);
 
+  // add backlinks for A-Store
+  const formatText = (text) => {
+    const parts = text.split(/(A-Store)/g);
+    return parts.map((part, i) =>
+      part === "A-Store" ? (
+        <a
+          key={i}
+          href="https://www.a-store.ge"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-bold"
+          style={{textDecoration: "underline", textUnderlineOffset: 4}}
+        >
+          A-Store
+        </a>
+      ) : (
+        <span key={i}>{part}</span>
+      )
+    );
+  };
+
   return (
     <div className="p-1 sm:px-20 xl:px-35 h-[50%] w-full overflow-y-auto overflow-x-hidden">
       <div id="story" ref={nodeRef} className="text-xl block space-y-4">
         {displayedText.split("\n\n").map((para, idx) => (
           <p key={idx} className="whitespace-pre-line">
-            {para}
+            {formatText(para)}
           </p>
         ))}
       </div>

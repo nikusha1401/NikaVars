@@ -7,7 +7,7 @@ I graduated high school in 2009 and went on to study at the Georgian Technical U
 One of my strongest qualities is the ability to learn quickly and independently, and get real results... 
 
 `,
-  works: `My professional journey is marked by a blend of entrepreneurial spirit and a deep dive into technology. In 2018, while launching my e-commerce startup, A-Store, I gained valuable experience in digital marketing, photography, and graphic design. However, it was my immersion in programming that truly resonated, quickly becoming my most fulfilling professional endeavor.
+  works: `My professional journey is marked by a blend of entrepreneurial spirit and a deep dive into technology. In 2017, while launching my e-commerce startup, A-Store, I gained valuable experience in digital marketing, photography, and graphic design. However, it was my immersion in programming that truly resonated, quickly becoming my most fulfilling professional endeavor.
 
   Within approximately six months of starting to code, I began developing an application designed to solve a real problem for courier companies, offering a complete service solution. This application quickly sold during its development phase and, upon completion, transformed into a successful product now used by many.  
   

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useLoading } from "../../contexts/IntroLoadingContext";
 import SplitText from "gsap/SplitText";
@@ -13,21 +13,43 @@ function Loader({ startRender }) {
   const { setLoading } = useLoading();
 
   useGSAP(() => {
-    document.fonts.ready.then(() => {
-      const split = new SplitText(textRef.current, {
-        type: "chars",
-      });
+  document.fonts.ready.then(() => {
+    const split = new SplitText(textRef.current, { type: "chars" });
+    gsap.set(split.chars, { y: 50 });
 
-      gsap.from(split.chars, {
-        opacity: 0,
-        y: 50,
-        stagger: 0.1,
-        duration: 0.9,
-        ease: "power3.out",
-        onComplete: startRender,
-      });
+    const tl = gsap.timeline({
+      onComplete: () => {
+        setLoading(false);
+        setActive(false);
+      }
     });
+
+    tl.to(split.chars, {
+      y: 0,
+      visibility: "visible",
+      stagger: 0.1,
+      duration: 0.9,
+      ease: "power3.out",
+      onComplete: startRender
+    })
+      .to(progressCont.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.5
+      })
+      .to(progressBarRef.current, {
+        scaleX: 1,
+        duration: 2,
+        ease: "power1.inOut"
+      })
+      .to(containerRef.current, {
+        y: "-100%",
+        duration: 0.8,
+        ease: "power2.inOut"
+      });
   });
+}, []);
+
 
   useGSAP(() => {
     const tl = gsap.timeline();
@@ -57,11 +79,11 @@ function Loader({ startRender }) {
 
   return (
     active && (
-      <div ref={containerRef} className="loader ">
+      <div ref={containerRef} className="loader">
         <div>
           <h1
             ref={textRef}
-            className="text-white text-5xl sm:text-6xl font-black"
+            className="text-white text-5xl sm:text-6xl font-black invisible"
           >
             Nika Vars
           </h1>
