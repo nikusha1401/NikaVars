@@ -36,12 +36,13 @@ function Loader({ startRender }) {
         opacity: 1,
         y: 0,
         duration: 0.5
-      })
+      }, "<0.5")
       .to(progressBarRef.current, {
         scaleX: 1,
+        opacity: 1,
         duration: 2,
         ease: "power1.inOut"
-      })
+      }, "<0.2")
       .to(containerRef.current, {
         y: "-100%",
         duration: 0.8,
@@ -51,31 +52,7 @@ function Loader({ startRender }) {
 }, []);
 
 
-  useGSAP(() => {
-    const tl = gsap.timeline();
 
-    tl.to(progressCont.current, {
-      opacity: 1,
-      y: 0,
-      duration: 0.5,
-    }).to(progressBarRef.current, {
-      scaleX: 1,
-      opacity: 1,
-      duration: 2,
-      ease: "power1.inOut",
-      onComplete: () => {
-        gsap.to(containerRef.current, {
-          y: "-100%",
-          duration: 0.8,
-          ease: "power2.inOut",
-          onComplete: () => {
-            setLoading(false);
-            setActive(false);
-          },
-        });
-      },
-    });
-  }, []);
 
   return (
     active && (

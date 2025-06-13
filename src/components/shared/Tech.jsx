@@ -32,7 +32,7 @@ const Tech = React.memo(function Tech({
     >
       <img
         className="w-full h-full"
-        src={`/assets/logos/${name}.svg`}
+        src={`/assets/logos/${name.toLowerCase()}.svg`}
         alt={name}
         title={name}
       />
