@@ -1,6 +1,37 @@
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+
 export default function DownloadButton() {
+  const containerRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.from(containerRef.current, {
+      opacity: 0,
+      y: 50,
+      duration: 0.8,
+      ease: "none", 
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 80%", 
+        once: true,
+      },
+    });
+  }, []);
+
+    const handlePointer = (scale) => (e) => {
+    if (e.pointerType !== "mouse") return;
+    gsap.killTweensOf(containerRef.current);
+    gsap.to(containerRef.current, { scale, duration: 0.8, ease: "power2.out" });
+  };
+
   return (
-    <div className="rounded-full m-auto mt-6 bg-gradient-to-r w-50 from-purple-600 to-indigo-900 pl-5 pr-1.5 py-0.5 transition-transform duration-300 hover:scale-105">
+    <div
+      ref={containerRef}
+      className="rounded-full m-auto mt-6 bg-gradient-to-r w-50 from-purple-600 to-indigo-900 pl-5 pr-1.5 py-0.5"
+         onPointerEnter={handlePointer(1.05)}
+      onPointerLeave={handlePointer(1)}
+    >
       <a
         href="/assets/nika-varsimashvili-resume.pdf"
         download
