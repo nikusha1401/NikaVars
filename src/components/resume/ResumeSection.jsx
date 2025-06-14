@@ -7,6 +7,7 @@ import {
   inProgress,
 } from "../../data/techCollections";
 import AnimatedText from "../shared/AnimatedText";
+import DownloadButton from "./DownloadButton";
 
 
 export default function ResumeSection() {
@@ -14,7 +15,8 @@ export default function ResumeSection() {
   return (
     <Section id={"resume"} sectionClass={"min-h-screen"}>
       <div className="flex flex-col pt-25 sm:pt-30 pb-10 px-2 md:px-10 xl:px-30 min-h-full">
-        <AnimatedText text={"Resume"} trigger={"#resume"}/>
+        <AnimatedText text={"Resume"} trigger={"#resume"} />
+        <DownloadButton />
         <div className="p-3 sm:p-20">
           <AnimatedText
             text={"Technologies I Use to Build Scalable, Efficient, and Maintainable Software"}
