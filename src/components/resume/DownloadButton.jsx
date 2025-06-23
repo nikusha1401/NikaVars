@@ -33,7 +33,7 @@ export default function DownloadButton() {
       onPointerLeave={handlePointer(1)}
     >
       <a
-        href="/assets/nika-varsimashvili-resume.pdf"
+        href="/assets/Nika-Varsimashvili-Resume.pdf"
         download
         className="flex flex-row items-center justify-between w-full"
       >

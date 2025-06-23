@@ -53,7 +53,6 @@ It is loaded with smooth **GSAP animations**, lightweight **3D elements** via **
 
 ```bash
 git clone https://github.com/nikusha1401/NikaVars.git
-cd NikaVars
 ```
 
 ### 📦 Install dependencies
